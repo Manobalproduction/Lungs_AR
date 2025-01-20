@@ -8,14 +8,44 @@
   <style>
     body {
       margin: 0;
+      display: flex;
+    }
+    #button-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100px;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #f4f4f4;
+      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+      z-index: 10;
+    }
+    #button-container button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 4px;
+    }
+    #button-container button:hover {
+      background-color: #0056b3;
     }
     model-viewer {
-      width: 100%;
+      flex: 1;
+      width: calc(100% - 100px);
       height: 100vh;
     }
   </style>
 </head>
 <body>
+  <div id="button-container">
+    <button onclick="window.open('https://manobalproduction.github.io/Asthama/', '_blank')">ASTHAMA</button>
+  </div>
   <model-viewer 
     src="https://cdn.glitch.me/16112d14-3ddb-40f3-88b5-ffe7f74d4267/lungs.glb?v=1736323346405" 
     ios-src="https://cdn.glitch.me/16112d14-3ddb-40f3-88b5-ffe7f74d4267/lungs.usdz?v=1736323372348"
